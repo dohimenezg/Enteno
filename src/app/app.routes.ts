@@ -9,8 +9,10 @@ import { TestFuerzaComponent } from './components/test-fuerza/test-fuerza.compon
 import { PerfilEntrenoComponent } from './components/perfil-entreno/perfil-entreno.component';
 import { TestFuerzaTablaComponent } from './components/test-fuerza-tabla/test-fuerza-tabla.component';
 import { RecomendacionTestComponent } from './components/recomendacion-test/recomendacion-test.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
+  { path:'login', component:LoginComponent },
   {
     path:'',
     component: MainlayoutComponent,
