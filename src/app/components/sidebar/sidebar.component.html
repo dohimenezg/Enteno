@@ -1,24 +1,56 @@
-<div class="flex h-screen w-[200px] bg-[#443737] p-1">
-  <div class="m-auto">
+<div class="flex flex-col h-screen">
+  
+  <button
+    class="p-2 m-2 text-white bg-[#FF4D00] rounded self-start"
+    (click)="isSidebarOpen = !isSidebarOpen">
+    <i-lucide [img]="Menu"></i-lucide>
+  </button>
+
+  <div
+    [ngClass]="{
+      'w-[200px]': isSidebarOpen,
+      'w-[60px]': !isSidebarOpen
+    }"
+    class="h-full bg-[#443737] p-1 flex flex-col transition-all duration-300">
+
     <ul class="pt-2 space-y-4">
       <li>
-        <a class="flex items-center text-white font-sans normal-case p-2 pl-4 pr-4 rounded-md border border-transparent hover:bg-[#FF4D00] hover:border-[#FF4D00] hover:font-medium" routerLink="/inicio" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-          <i-lucide class="mr-2" [img]="User"></i-lucide>
-          <p class="font-bold">Perfil</p>
+        <a
+          class="flex items-center text-white font-sans normal-case p-2 pl-4 pr-4 rounded-md border border-transparent hover:bg-[#FF4D00] hover:border-[#FF4D00] hover:font-medium"
+          routerLink="/inicio"
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page">
+          <i-lucide
+            class="mr-2"
+            [img]="User"></i-lucide>
+          <p class="font-bold" *ngIf="isSidebarOpen">Perfil</p>
         </a>
       </li>
       <li>
-        <a class="flex items-center text-white font-sans normal-case p-2 pl-4 pr-4 rounded-md border border-transparent hover:bg-[#FF4D00] hover:border-[#FF4D00] hover:font-medium" routerLink="/inicio" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-          <i-lucide class="mr-2" [img]="Users"></i-lucide>
-          <p class="font-bold">Grupos</p>
+        <a
+          class="flex items-center text-white font-sans normal-case p-2 pl-4 pr-4 rounded-md border border-transparent hover:bg-[#FF4D00] hover:border-[#FF4D00] hover:font-medium"
+          routerLink="/inicio"
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page">
+          <i-lucide
+            class="mr-2"
+            [img]="Users"></i-lucide>
+          <p class="font-bold" *ngIf="isSidebarOpen">Grupos</p>
         </a>
       </li>
       <li>
-        <a class="flex items-center text-white font-sans normal-case p-2 pl-4 pr-4 rounded-md border border-transparent hover:bg-[#FF4D00] hover:border-[#FF4D00] hover:font-medium" routerLink="/inicio" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-          <i-lucide class="mr-2" [img]="ChartColumnBig"></i-lucide>
-          <p class="font-bold">Estadisticas</p>
+        <a
+          class="flex items-center text-white font-sans normal-case p-2 pl-4 pr-4 rounded-md border border-transparent hover:bg-[#FF4D00] hover:border-[#FF4D00] hover:font-medium"
+          routerLink="/inicio"
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page">
+          <i-lucide
+            class="mr-2"
+            [img]="ChartColumnBig"></i-lucide>
+          <p class="font-bold" *ngIf="isSidebarOpen">Estadísticas</p>
         </a>
       </li>
     </ul>
   </div>
+
 </div>
